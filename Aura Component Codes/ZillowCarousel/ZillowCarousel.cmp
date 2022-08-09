@@ -1,0 +1,25 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	 <html>
+  
+        <body>
+              <lightning:carousel disableAutoRefresh="false" disableAutoScroll="false">
+        <lightning:carouselImage
+            src = "https://cdn.discordapp.com/attachments/884640014464606269/1003634946172256266/Untitled_1283_590px.png">
+        </lightning:carouselImage>
+        <lightning:carouselImage
+            src = "https://cdn.discordapp.com/attachments/884640014464606269/1003634945505378326/Untitled_1283_590px_1.png">
+        </lightning:carouselImage>
+        <lightning:carouselImage
+            src = "https://cdn.discordapp.com/attachments/884640014464606269/1003634945836716062/Untitled_1283_590px_2.png">
+        </lightning:carouselImage>
+    </lightning:carousel>
+            
+            
+               <img class="trial" style="padding: 0%;width:100%;" src="" />
+       
+          
+        </body>
+ 
+
+    </html>
+</aura:component>

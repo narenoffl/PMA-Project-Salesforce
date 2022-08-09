@@ -1,0 +1,41 @@
+<aura:component controller = "GetMaintenanceList" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="lstMaintenance" type="String[]" />
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<br/>
+<br/>
+<div class="slds">
+<div style="font-size:28px;font-weight:bold;margin-left:20px">
+Maintenance Requests
+</div>
+<br/>
+<br/>
+<table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+<thead>
+<tr class="slds-text-heading_label">
+ 
+<th scope="col"><div class="slds-truncate" title="Name">Name</div></th>
+<th scope="col"><div class="slds-truncate" title="Email">Email</div></th>
+ 
+ 
+<th scope="col"><div class="slds-truncate" title="Rental Unit Name">Rental Unit Name</div></th>
+<th scope="col"><div class="slds-truncate" title="Maintenance Service Required">Maintenance Service Required</div></th>
+<th scope="col"><div class="slds-truncate" title="Status">Status</div></th>
+</tr>
+</thead>
+<tbody>
+<!-- Use the Apex model and controller to fetch server side data -->
+<aura:iteration items="{!v.lstMaintenance}" var="maintenance">
+<tr>
+ 
+<td><div class="slds-truncate" title="{!maintenance.Name}">{!maintenance.Name}</div></td>
+<td><div class="slds-truncate" title="{!maintenance.Email}">{!maintenance.Email}</div></td>
+<td><div class="slds-truncate" title="{!maintenance.Rental_Unit_Name__c}">{!maintenance.Rental_Unit_Name__c}</div></td>
+<td><div class="slds-truncate" title="{!maintenance.Maintenance_Service_Required__c}">{!maintenance.Maintenance_Service_Required__c}</div></td>
+<td><div class="slds-truncate" title="{!maintenance.Status}">{!maintenance.Status}</div></td>
+ 
+</tr>
+</aura:iteration>
+</tbody>
+</table>
+</div>
+</aura:component>

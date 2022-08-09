@@ -1,0 +1,41 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="GetAgreementList">
+<aura:attribute name="lstAgreement" type="String[]" />
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<br/>
+<br/>
+<div class="slds">
+<div style="font-size:28px;font-weight:bold;margin-left:20px">
+Rental Agreement
+</div>
+<br/>
+<br/>
+<table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+<thead>
+<tr class="slds-text-heading_label">
+ 
+<th scope="col"><div class="slds-truncate" title="Name">Rental Agreement Number</div></th>
+<th scope="col"><div class="slds-truncate" title="Rental Amount">Rental Amount</div></th>
+ 
+ 
+<th scope="col"><div class="slds-truncate" title="Rental Unit">Rental Unit</div></th>
+<th scope="col"><div class="slds-truncate" title="Renter">Renter</div></th>
+<th scope="col"><div class="slds-truncate" title="Renter Email">Renter Email</div></th>
+</tr>
+</thead>
+<tbody>
+<!-- Use the Apex model and controller to fetch server side data -->
+<aura:iteration items="{!v.lstAgreement}" var="agreement">
+<tr>
+ 
+<td><div class="slds-truncate" title="{!agreement.Name}">{!agreement.Name}</div></td>
+<td><div class="slds-truncate" title="{!agreement.Rental_Amount__c}">{!agreement.Rental_Amount__c}</div></td>
+<td><div class="slds-truncate" title="{!agreement.Rental_Unit__c}">{!agreement.Rental_Unit__c}</div></td>
+<td><div class="slds-truncate" title="{!agreement.Renter__c}">{!agreement.Renter__c}</div></td>
+<td><div class="slds-truncate" title="{!agreement.Renter_Email__c}">{!agreement.Renter_Email__c}</div></td>
+ 
+</tr>
+</aura:iteration>
+</tbody>
+</table>
+</div>
+</aura:component>

@@ -1,0 +1,41 @@
+<aura:component controller="GetRentalUnitList" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+<aura:attribute name="lstRentalUnit" type="String[]" />
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<br/>
+<br/>
+<div class="slds">
+<div style="font-size:28px;font-weight:bold;margin-left:20px">
+Rental Unit
+</div>
+<br/>
+<br/>
+<table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+<thead>
+<tr class="slds-text-heading_label">
+ 
+<th scope="col"><div class="slds-truncate" title="Rental Unit">Rental Unit</div></th>
+<th scope="col"><div class="slds-truncate" title="Rental Unit Name">Rental Unit Name</div></th>
+ 
+ 
+<th scope="col"><div class="slds-truncate" title="Total Square Feet">Total Square Feet</div></th>
+<th scope="col"><div class="slds-truncate" title="Floors">Floors</div></th>
+<th scope="col"><div class="slds-truncate" title="Unit #">Unit #</div></th>
+</tr>
+</thead>
+<tbody>
+<!-- Use the Apex model and controller to fetch server side data -->
+<aura:iteration items="{!v.lstRentalUnit}" var="rentalunit">
+<tr>
+ 
+<td><div class="slds-truncate" title="{!rentalunit.Name}">{!rentalunit.Name}</div></td>
+<td><div class="slds-truncate" title="{!rentalunit.Rental_Unit_Name__c}">{!rentalunit.Rental_Unit_Name__c}</div></td>
+<td><div class="slds-truncate" title="{!rentalunit.Total_Square_feet__c}">{!rentalunit.Total_Square_feet__c}</div></td>
+<td><div class="slds-truncate" title="{!rentalunit.Floors__c}">{!rentalunit.Floors__c}</div></td>
+<td><div class="slds-truncate" title="{!rentalunit.Unit__c}">{!rentalunit.Unit__c}</div></td>
+ 
+</tr>
+</aura:iteration>
+</tbody>
+</table>
+</div>
+</aura:component>
